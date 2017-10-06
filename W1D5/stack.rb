@@ -7,6 +7,8 @@ class Stack
   def add(el)
     # adds an element to the stack
     @stack.push(el)
+    # not sure why el returned, but seems useful 
+    el
   end
 
   def remove

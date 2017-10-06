@@ -24,6 +24,12 @@ class Map
   end
 
   def show
-    @map.dup
+    deep_dup(@map)
+  end
+end
+
+private
+  def deep_dup(array)
+    arr.map { |el| el.is_a?(Array) deep_dup(el) : el }
   end
 end
