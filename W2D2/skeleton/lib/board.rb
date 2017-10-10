@@ -4,14 +4,14 @@ class Board
   def initialize(name1, name2)
     @name1 = name1
     @name2 = name2
-    @cups = Array.new(14) { Array.new }
+    @cups = Array.new(14) { Array.new() }
     place_stones
   end
 
   def place_stones
     # helper method to #initialize every non-store cup with four stones each
     @cups.each_with_index do |cup, idx|
-      next if idx == 7 || idx == 14
+      next if idx == 6 || idx == 13
         4.times do
           cup << :stone
         end
@@ -39,7 +39,7 @@ class Board
     if @cups[ending_cup_idx] != [] && valid_move[ending_cup_idx]
       return false
     end
-    true 
+    true
   end
 
   def render
